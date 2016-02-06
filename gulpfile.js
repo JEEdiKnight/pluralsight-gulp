@@ -15,6 +15,16 @@ gulp.task('vet', function() {
 
 });
 
+gulp.task('styles', function() {
+    log('Compiling Less --> CSS');
+    return gulp
+        .src(config.less)
+        .pipe($.less())
+        .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+        .pipe(gulp.dest(config.temp));
+
+});
+
 ///////////////
 
 function log(msg) {
