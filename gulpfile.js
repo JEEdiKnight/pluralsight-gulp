@@ -31,6 +31,10 @@ gulp.task('clean-styles', function(done) {
     clean(files, done);
 });
 
+gulp.task('less-watcher', function() {
+    gulp.watch([config.less], ['styles']);
+});
+
 ///////////////
 
 function clean(path, done) {
